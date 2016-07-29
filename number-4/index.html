@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <title>Mad Lib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </head>
+  <body class="container">
+    <h1>Mad Lib</h1>
+    <form class="form-horizontal" role="form" id="mad-lib" onsubmit="printMadLib(event);">
+      <div class="form-group">
+        <label for="noun" class="control-label col-sm-2">Enter a noun:</label>
+        <div class="col-sm-10">
+          <input type="text" id="noun" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="verb" class="control-label col-sm-2">Enter a verb:</label>
+        <div class="col-sm-10">
+          <input type="text" id="verb" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="adjective" class="control-label col-sm-2">Enter an adjective:</label>
+        <div class="col-sm-10">
+          <input type="text" id="adjective" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="adverb" class="control-label col-sm-2">Enter a adverb:</label>
+        <div class="col-sm-10">
+          <input type="text" id="adverb" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Print Mad Lib</button>
+        </div>
+      </div>
+    </form>
+    <div id="printed-mad-lib"></div>
+  </body>
+  <script type="text/javascript">
+    var printMadLib = function(e){
+      e.preventDefault();
+      var noun = document.getElementById("noun").value;
+      var verb = document.getElementById("verb").value;
+      var adjective = document.getElementById("adjective").value;
+      var adverb = document.getElementById("adverb").value;
+      document.getElementById("printed-mad-lib").innerHTML =
+      "Do you " + verb + " your " + noun + " " + adjective + "? " + "That's " + adverb;
+    }
+  </script>
+</html>

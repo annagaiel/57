@@ -1,0 +1,30 @@
+<DOCTYPE html!>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <title>Counting the Number of Characters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </head>
+  <body class="container">
+    <h1>Counting the Number of Characters</h1>
+    <label for="answer">What is the input string?</label>
+    <input type="text" id="answer" onkeyup="countCharacters()"/><br/>
+    <p id="answer-string"></p>
+  </body>
+  <script type="text/javascript">
+    function countCharacters() {
+      var answer = document.getElementById("answer").value;
+      if(answer.trim().length === 0){
+        document.getElementById("answer-string").style.visibility = "hidden";
+      }else{
+        document.getElementById("answer-string").style.visibility = "visible";
+        var data = answer + " has " + '<span id="counter">' + answer.length + "</span>" + " characters.";
+        document.getElementById("answer-string").innerHTML = data
+      }
+    }
+    countCharacters();
+  </script>
+</html>
