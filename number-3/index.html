@@ -4,32 +4,42 @@
     <meta charset="utf-8">
     <title>Printing Quotes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </head>
-  <body class="container">
-    <h1>Printing Quotes</h1>
-    <form class="form-horizontal" role="form">
-      <div class="form-group">
-        <label for="quote" class="control-label col-sm-2">What is the quote?</label>
-        <div class="col-sm-10">
-          <input type="text" id="quote" class="form-control"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+    </head>
+    <style media="screen">
+    .navbar {
+      border-radius: 0;
+    }
+    </style>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="../index.html">57 Exercises</a>
+    </nav>
+    <div class="container">
+      <br>
+      <h1 class="h3">Printing Quotes</h1>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="quote" class="control-label col-sm-2">What is the quote?</label>
+          <div class="col-sm-10">
+            <input type="text" id="quote" class="form-control"/>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="author" class="control-label col-sm-2">Who said it?</label>
-        <div class="col-sm-10">
-          <input type="text" id="author" class="form-control"/>
+        <div class="form-group">
+          <label for="author" class="control-label col-sm-2">Who said it?</label>
+          <div class="col-sm-10">
+            <input type="text" id="author" class="form-control"/>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="button" name="button" onclick="printQuote()" class="btn btn-default">Print Quote</button>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" name="button" onclick="printQuote()" class="btn btn-primary">Print Quote</button>
+          </div>
         </div>
-      </div>
-    </form>
-    <div id="printed-quote"></div>
+      </form>
+      <div class="col-sm-12" id="printed-quote"></div>
+    </div>
   </body>
   <script type="text/javascript">
     var printQuote = function(){
@@ -37,7 +47,7 @@
       var author = document.getElementById("author").value;
 
       document.getElementById("printed-quote").innerHTML =
-      "<blockquote>" + author + ' says, ' + '\"' + quote + '\"' + "</blockquote>"
+      "<br><blockquote class='blockquote'>" + author + ' says, ' + '\"' + quote + '\"' + "</blockquote>"
     }
   </script>
 </html>

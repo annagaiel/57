@@ -4,32 +4,42 @@
     <meta charset="utf-8">
     <title>Simple Math</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </head>
-  <body class="container">
-    <h1>Simple Math</h1>
-    <form class="form-horizontal" role="form" onsubmit="calculate(event);">
-      <div class="form-group">
-        <label for="first" class="control-label col-sm-3">What is the first number?</label>
-        <div class="col-sm-9">
-          <input type="number" id="first" class="form-control"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+    </head>
+    <style media="screen">
+    .navbar {
+      border-radius: 0;
+    }
+    </style>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="../index.html">57 Exercises</a>
+    </nav>
+    <div class="container">
+      <br>
+      <h1 class="h3">Simple Math</h1>
+      <form class="form-horizontal" role="form" onsubmit="calculate(event);">
+        <div class="form-group">
+          <label for="first" class="control-label col-sm-3">What is the first number?</label>
+          <div class="col-sm-9">
+            <input type="number" id="first" class="form-control"/>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="second" class="control-label col-sm-3">What is the second number?</label>
-        <div class="col-sm-9">
-          <input type="number" id="second" class="form-control"/>
+        <div class="form-group">
+          <label for="second" class="control-label col-sm-3">What is the second number?</label>
+          <div class="col-sm-9">
+            <input type="number" id="second" class="form-control"/>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-10">
-          <button type="submit" class="btn btn-primary">Calculate</button>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-10">
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </div>
         </div>
-      </div>
-    </form>
-    <div id="result" class="col-sm-offset-1 col-sm-10"></div>
+      </form>
+      <div id="result" class="col-sm-offset-1 col-sm-10"></div>
+    </div>
   </body>
   <script type="text/javascript">
     var add = function(firstNumber, secondNumber){
@@ -54,6 +64,7 @@
       var secondNumber = document.getElementById("second").value;
 
       document.getElementById("result").innerHTML =
+      "<br>" +
       firstNumber + " + " + secondNumber + " = " +  add(firstNumber, secondNumber) + "<br/>" +
       firstNumber + " - " + secondNumber + " = " +  subtract(firstNumber, secondNumber) + "<br/>" +
       firstNumber + " * " + secondNumber + " = " +  multiply(firstNumber, secondNumber) + "<br/>" +
